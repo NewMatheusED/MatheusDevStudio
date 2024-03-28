@@ -7,7 +7,44 @@
     <title>MatheusDevStudio</title>
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logo.png" alt="MatheusDevStudio">
+            </div>
+            <nav class="desktop">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav><!--desktop-->
+            <nav class="mobile">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav><!--mobile-->
+            <div class="contact">
+                <a href="">Entre em contato</a>
+            </div>
+        </div><!--container-->
+    </header>
+
+    <section id="home">
+        <div style="padding: 0;" class="container">
+            <div id="particles-js"></div>
+        </div>
+    </section>
+
+    <section style="height: 500px; background-color: aqua; border-bottom: 1px solid #ccc;" id="about"></section>
+    <section style="height: 500px; background-color: rebeccapurple; border-bottom: 1px solid #ccc;" id="services"></section>
+    <section style="height: 500px; background-color: gold; border-bottom: 1px solid #ccc;" id="contact"></section>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/particles.js/particles.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

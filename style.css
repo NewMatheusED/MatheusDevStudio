@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    background-color: #593c4e;
+    color: #f5f5f5;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .logo img {
+    max-width: 100px;
+}
+
+header .container .mobile {
+    display: none;
+}
+
+/* header .container .desktop {
+    margin: 0 auto;
+    width: 28%;
+} */
+
+header .container .desktop ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+header .container .desktop ul li {
+    margin: 0 10px;
+}
+
+header .container .desktop ul li a{
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+
+header .container .contact a {
+    color: #f5f5f5;
+    text-decoration: none;
+    background-color: #a97c53;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+}
+
+header .container .desktop ul li a::after {
+    content: '';
+    display: block;
+    bottom: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    height: 1px;
+    width: 0;
+    transition: .2s ease-in-out;
+}
+
+header .container .desktop ul li a:hover::after {
+    width: 100%;
+}
+
+header .container .desktop ul li a.active::after {
+    width: 100%;
+}
