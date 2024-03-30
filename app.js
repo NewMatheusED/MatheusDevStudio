@@ -5,6 +5,19 @@ $(function(){
 
     //----------------------------------------------------------------
 
+    // setTimeout(function(){
+    //     $('.info h3').addClass('active');
+    // },2000)
+
+    //----------------------------------------------------------------
+
+    $('header .container i').click(function(){
+        $('header .container .mobile ul').slideToggle();
+    
+    })
+
+    //----------------------------------------------------------------
+
     $('header .container .desktop ul li a').click(function(){
         var href = $(this).attr('href');
         var target = $(href);
@@ -37,5 +50,5 @@ $(function(){
             updateActiveMenuItem();
     });
 
-    //----------------------------------------------------------------
+    //----------------------------------------------------------------  
 })

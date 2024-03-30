@@ -15,16 +15,22 @@ html, body {
     margin: 0 auto;
 }
 
+.w50 {
+    width: 50%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
 }
+
 
 header {
     position: fixed;
     width: 100vw;
     background-color: #593c4e;
     color: #f5f5f5;
+    z-index: 999;
 }
 
 header .container {
@@ -37,8 +43,36 @@ header .container .logo img {
     max-width: 100px;
 }
 
+header .container i {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
 header .container .mobile {
     display: none;
+    justify-content: center;
+
+    ul {
+        display: none;
+        list-style: none;
+        text-align: center;
+        background-color: #593c4e;
+        width: 100vw;
+        position: fixed;
+        top: 100px;
+        left: 0 ;
+        margin: 0 auto;
+        text-align: center;
+        li {
+            margin: 15px;
+            a {
+                color: #f5f5f5;
+                text-decoration: none;
+                padding: 15px 20px;
+            }
+        }
+    }
 }
 
 /* header .container .desktop {
@@ -88,4 +122,138 @@ header .container .desktop ul li a:hover::after {
 
 header .container .desktop ul li a.active::after {
     width: 100%;
+}
+
+section#home .container #particles-js {
+    position: relative;
+    .banner {
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center; 
+        justify-content: space-around;
+        img {
+            max-width: 30%;
+            border-radius: 10%;
+            box-shadow: -10px 10px 20px 10px rgba(0, 0, 0, 0.3);
+            
+        }
+        .info {
+            text-align: center;
+            color: #fff;
+            background-color: rgba(169, 125, 83, 0.55);
+            padding: 20px;
+            border-radius: 20px;
+            h1 {
+                font-size: 2rem;
+                margin: 10px 0;
+            }
+            h3 {
+                font-size: 1.3rem;
+                margin: 10px 0;
+            }
+            p {
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+            .buttons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: #a97c53;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    margin: 0 10px;
+                    transition: .2s ease-in-out;
+                    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.3);
+                }
+                a:hover {
+                    background-color: #593c4e;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    header {
+        .container {
+            .logo {
+                width: 50%;
+            }
+            i {
+                display: block;
+                width: 50%;
+                text-align: right;
+            }
+            a.contato {
+                display: none;
+            }
+            .desktop {
+                display: none;
+            }
+            .mobile {
+                display: flex;
+            }
+        }
+    }
+
+    section {
+        .container {
+            #particles-js {
+                height: 100vh;
+                .banner {
+                    /* margin: 100px 0; caso preciso da foto */
+                    flex-direction: column;
+                    img {
+                        max-width: 50% !important;
+                        margin-bottom: 40px;
+                        display: none;
+                    }
+                    .info {
+                        padding: 10px;
+                        h1 {
+                            font-size: 1.5rem;
+                        }
+                        h3 {
+                            font-size: 1rem;
+                        }
+                        p {
+                            font-size: .8rem;
+                        }
+                        .buttons {
+                            a {
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                    .w50 {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        .container {
+            #particles-js {
+                .banner {
+                    /* margin: 200px 0; caso preciso da foto */
+                    img {
+                        max-width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -4,47 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>MatheusDevStudio</title>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="container">
             <div class="logo">
                 <img src="img/Logo.png" alt="MatheusDevStudio">
-            </div>
+            </div><!--logo-->
+            <i class="fa-solid fa-bars"></i>
             <nav class="desktop">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
+                    <!-- <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Serviços</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#contact">Contato</a></li> -->
                 </ul>
             </nav><!--desktop-->
             <nav class="mobile">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <!-- <li><a href="#">Sobre</a></li>
                     <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Contato</a></li> -->
+                    <li><a href="">Entre em contato</a></li>
                 </ul>
             </nav><!--mobile-->
             <div class="contact">
-                <a href="">Entre em contato</a>
-            </div>
+                <a class="contato" href="">Entre em contato</a>
+            </div><!--contact-->
         </div><!--container-->
     </header>
 
     <section id="home">
         <div style="padding: 0;" class="container">
-            <div id="particles-js"></div>
-        </div>
+            <div id="particles-js">
+                <div class="banner" data-aos="fade-right">
+                    <img class="w50" src="img/perfil3.jpg" alt="">
+                    <div class="info w50">
+                        <h1>Olá pessoal! Sou o Matheus</h1>
+                        <h3>Desenvolvedor Web Front End apaixonado por criar soluções digitais incríveis. Vamos trabalhar juntos para tornar sua visão uma realidade!</h3>
+                        <p>Transformo ideias em interfaces incríveis e funcionais. Se você precisa de um site elegante, otimizado para dispositivos móveis e que atraia mais clientes, estou aqui para ajudar!</p>
+                        <div class="buttons">
+                            <a href="/portifolio.html">Portfólio</a>
+                            <a href="/contato.html">Contato</a>
+                        </div><!--buttons-->
+                    </div><!--info-->
+                </div><!--banner-->
+            </div>
     </section>
-
-    <section style="height: 500px; background-color: aqua; border-bottom: 1px solid #ccc;" id="about"></section>
-    <section style="height: 500px; background-color: rebeccapurple; border-bottom: 1px solid #ccc;" id="services"></section>
-    <section style="height: 500px; background-color: gold; border-bottom: 1px solid #ccc;" id="contact"></section>
+    <script src="node_modules/aos/dist/aos.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/particles.js/particles.js"></script>
     <script src="app.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
