@@ -292,13 +292,12 @@ footer {
             }
         }
     }
-}
-
-footer {
-    .container {
-        flex-direction: column;
-        .logo, .infos, .social {
-            margin: 10px 0;
+    footer {
+        .container {
+            flex-direction: column;
+            .logo, .infos, .social {
+                margin: 10px 0;
+            }
         }
     }
 }
