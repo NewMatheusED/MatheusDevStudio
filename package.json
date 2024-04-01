@@ -4,5 +4,23 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
     "particles.js": "^2.0.0"
-  }
+  },
+  "name": "comercialpessoal",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewMatheusED/MatheusDevStudio.git"
+  },
+  "author": "Matheus Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NewMatheusED/MatheusDevStudio/issues"
+  },
+  "homepage": "https://github.com/NewMatheusED/MatheusDevStudio#readme",
+  "description": ""
 }
