@@ -18,6 +18,15 @@ $(function(){
 
     //----------------------------------------------------------------
 
+    // $(window).on('scroll', function() {
+    //     var scrollTop = $(window).scrollTop();
+    //     var imgPos = scrollTop / 2 + 'px';
+    //     imgPos = imgPos* (-1);
+    //     $('.particles-js-canvas-el').css('transform', 'translateY(' + imgPos + ')');
+    // });
+
+    //----------------------------------------------------------------
+
     $('header .container .desktop ul li a').click(function(){
         var href = $(this).attr('href');
         var target = $(href);
