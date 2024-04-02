@@ -19,6 +19,11 @@ html, body {
     width: 50%;
 }
 
+.w100 {
+    width: 100%;
+
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
@@ -181,6 +186,86 @@ section#home .container #particles-js {
     }
 }
 
+section {
+    .container {
+        #particles-js {
+            height: 100vh;
+            .main {
+                color: #f5f5f5;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                background-color: rgba(169, 125, 83, 0.55);
+                padding: 20px;
+                border-radius: 20px;
+                align-items: center;
+                .banner {
+                    width: 40%;
+                    h1 {
+                        text-align: center;
+                        font-size: 35px;
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 1.5;
+                        text-align: center;
+                    
+                    }
+                }
+                .contact {
+                    form {
+                        display: flex;
+                        flex-wrap: wrap;
+                        input, textarea {
+                            padding: 5px 10px 5px 15px;
+                            border: 1px solid #593c4e
+                        }
+                        button {
+                            font-size: 16px;
+                            margin: 10px auto;
+                            padding: 5px 20px;
+                            border: none;
+                            border-radius: 20px;
+                            background-color: #a97c53;
+                            color: #f5f5f5;
+                            cursor: pointer;
+                            transition: .2s ease-in-out;
+                        }
+                        button:hover {
+                            background-color: #593c4e;
+                        }
+                    }
+                    .align {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 25px 0 10px 0;
+                        a {
+                            color: #f5f5f5;
+                            text-decoration: none;
+                            padding: 10px 20px;
+                            border-radius: 20px;
+                            margin: 0 10px;
+                            i {
+                                margin-right: 10px;
+                            
+                            }
+                        }
+                        a:first-child {
+                            background-color: #25c861;
+                        }
+                        a:last-child {
+                            background-color: #3b8d98;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
 footer {
     background-color: #593c4e;
     color: #f5f5f5;
@@ -287,6 +372,44 @@ footer {
                     }
                     .w50 {
                         width: 100%;
+                    }
+                }
+            }
+            .main {
+                flex-direction: column;
+                .banner {
+                    width: 100%;
+                    margin: 10px 0 40px 0;
+                    h1 {
+                        font-size: 2rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+                .contact {
+                    form {
+                        input, textarea {
+                            width: 100%;
+                        }
+                        button {
+                            margin: 10px 0;
+                        }
+                    }
+                    .align {
+                        a {
+                            margin: 10px 0;
+                        }
+                    }
+                
+                }
+                .w50 {
+                    width: 100% !important;
+                }
+                .align {
+                    flex-direction: column;
+                    a {
+                        margin: 10px 0 !important;
                     }
                 }
             }
