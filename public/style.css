@@ -31,6 +31,8 @@ body {
 
 
 header {
+    margin: 0;
+    padding: 0;
     position: fixed;
     width: 100vw;
     background-color: #593c4e;
@@ -42,6 +44,10 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+header .container .logo {
+    width: 161px
 }
 
 header .container .logo img {
