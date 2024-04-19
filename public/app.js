@@ -60,4 +60,34 @@ $(function(){
     });
 
     //----------------------------------------------------------------  
+
+        var inputs = document.getElementsByTagName('input');
+        for(var i = 0; i < inputs.length; i++) {
+            inputs[i].setAttribute('data-default', inputs[i].value);
+            inputs[i].addEventListener('focus', function() {
+                if(this.value === this.getAttribute('data-default')) {
+                    this.value = '';
+                }
+            });
+            inputs[i].addEventListener('blur', function() {
+                if(this.value == '') {
+                    this.value = this.getAttribute('data-default');
+                }
+            });
+        }
+        var textareas = document.getElementsByTagName('textarea');
+        for(var i = 0; i < textareas.length; i++) {
+            textareas[i].setAttribute('data-default', textareas[i].value);
+            textareas[i].addEventListener('focus', function() {
+                if(this.value === this.getAttribute('data-default')) {
+                    this.value = '';
+                }
+            });
+            textareas[i].addEventListener('blur', function() {
+                if(this.value == '') {
+                    this.value = this.getAttribute('data-default');
+                }
+            });
+        }
+    //----------------------------------------------------------------  
 })

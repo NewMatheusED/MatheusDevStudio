@@ -223,9 +223,25 @@ section {
                     form {
                         display: flex;
                         flex-wrap: wrap;
+                        gap: 15px;
                         input, textarea {
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 14px;
                             padding: 5px 10px 5px 15px;
-                            border: 1px solid #593c4e
+                            border: none;
+                            background: none;
+                            color: #fff;
+                            font-weight: bold;
+                            width: 100%;
+                            border-bottom: 2px solid #888;
+                            transition: .2s ease-in-out;
+                        }
+                        input:focus, textarea:focus {
+                            outline: none;
+                            border-bottom: 2px solid #fff;
+                        }
+                        input::placeholder, textarea::placeholder {
+                            color: #fff !important;
                         }
                         button {
                             font-size: 16px;
