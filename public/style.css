@@ -11,7 +11,7 @@ html, body {
 }
 
 .container {
-    padding: 0 2%;
+    text-align: center;
     margin: 0 auto;
 }
 
@@ -246,7 +246,7 @@ section {
                         button {
                             font-size: 16px;
                             margin: 10px auto;
-                            padding: 5px 20px;
+                            padding: 10px 30px;
                             border: none;
                             border-radius: 20px;
                             background-color: #a97c53;
@@ -549,6 +549,8 @@ footer {
                         }
                         button {
                             margin: 10px 0;
+                            width: 30%;
+                            padding: 10px 0 !important;
                         }
                     }
                     .align {
@@ -627,4 +629,11 @@ footer {
             }
         } 
     }
+    .contact {
+            button {
+                margin: 10px 0;
+                width: 90% !important;
+                padding: 10px 0 !important;
+            }
+        }
 }

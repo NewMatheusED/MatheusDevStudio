@@ -55,9 +55,9 @@ $(function(){
     //     });
     // }
 
-    $(window).on('scroll', function() {
-            updateActiveMenuItem();
-    });
+    // $(window).on('scroll', function() {
+    //         updateActiveMenuItem();
+    // });
 
     //----------------------------------------------------------------  
 
