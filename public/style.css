@@ -481,7 +481,7 @@ footer {
     header {
         .container {
             .logo {
-                width: 50%;
+                width: auto;
             }
             i {
                 display: block;
