@@ -113,6 +113,7 @@ header .container .contact a {
     background-color: #a97c53;
     padding: 10px 20px;
     border-radius: 20px;
+    margin-right: 20px;
 
 }
 
@@ -481,12 +482,14 @@ footer {
     header {
         .container {
             .logo {
-                width: auto;
+                width: 50%;
+                text-align: left;
             }
             i {
                 display: block;
                 width: 50%;
                 text-align: right;
+                margin-right: 10px;
             }
             a.contato {
                 display: none;
