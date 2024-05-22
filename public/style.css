@@ -330,7 +330,7 @@ section {
                 height: 5px;
                 border-radius: 30px;
                 background: linear-gradient(90deg, rgba(89,60,78,0) 0%, rgba(89,60,78,1) 50%, rgba(89,60,78,0) 100%);
-                margin: 30px;
+                margin: 30px auto;
             }
             a {
                 color: #fff;
