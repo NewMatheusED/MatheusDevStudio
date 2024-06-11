@@ -630,6 +630,10 @@ footer {
     }
 }
 
+.w50 {
+    width: 100%;
+}
+
 @media screen and (max-width: 1000px) {
     .contato {
         .container {
