@@ -19,9 +19,10 @@ export function HeroSection() {
             trás.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button render={<a href="#projetos">Ver projetos</a>} />
+            <Button nativeButton={false} render={<a href="#projetos">Ver projetos</a>} />
             <Button
               variant="outline"
+              nativeButton={false}
               render={
                 <a href="mailto:matheus081105@gmail.com">
                   <Mail className="mr-2" size={16} /> E-mail
@@ -30,6 +31,7 @@ export function HeroSection() {
             />
             <Button
               variant="outline"
+              nativeButton={false}
               render={
                 <a
                   href="https://www.linkedin.com/in/matheus-eduardo-mendonça-gomes-4aaa57270"
@@ -42,6 +44,7 @@ export function HeroSection() {
             />
             <Button
               variant="outline"
+              nativeButton={false}
               render={
                 <a href="/img/CV.pdf" download>
                   <Download className="mr-2" size={16} /> Baixar CV
@@ -52,7 +55,14 @@ export function HeroSection() {
         </Reveal>
         <Reveal delay={0.1}>
           <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-lg border border-accent/40">
-            <Image src="/img/perfil3.jpg" alt="Matheus Eduardo" fill className="object-cover" priority />
+            <Image
+              src="/img/perfil3.jpg"
+              alt="Matheus Eduardo"
+              fill
+              sizes="(min-width: 768px) 20rem, 80vw"
+              className="object-cover"
+              priority
+            />
           </div>
         </Reveal>
       </div>
