@@ -19,6 +19,7 @@
 - All copy is in Portuguese (pt-BR), rewritten for concision (not a verbatim copy of the old site's paragraphs).
 - Config/scaffolding tasks (no pure logic to unit-test) are verified by `npm run build` succeeding, not by contrived unit tests. Tasks with real logic (data modules, schema, hooks, the logo script) get real Vitest tests written before the implementation, per TDD. Purely presentational/motion components are verified manually in the final task via the browser, not unit-tested — say so rather than faking coverage.
 - Spec: `docs/superpowers/specs/2026-08-01-portfolio-redesign-design.md`.
+- **shadcn component composition:** the shadcn CLI in this environment used its "Nova" preset, backed by `@base-ui/react` rather than classic Radix UI. Its primitives (`Button`, `SheetTrigger`, etc.) do **not** support the classic shadcn `asChild` prop — use the `render` prop instead, passing the element to render as its value (e.g. `<Button render={<a href="/x">Link</a>} />`, `<SheetTrigger render={<Button variant="ghost">Menu</Button>} />`). Every task snippet in this plan has already been written using `render`, not `asChild` — if you see `asChild` anywhere, that's stale and should be `render`.
 
 ---
 
@@ -1205,11 +1206,13 @@ export function MobileMenu({ activeId }: MobileMenuProps) {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Abrir menu" className="md:hidden">
-          <Menu />
-        </Button>
-      </SheetTrigger>
+      <SheetTrigger
+        render={
+          <Button variant="ghost" size="icon" aria-label="Abrir menu" className="md:hidden">
+            <Menu />
+          </Button>
+        }
+      />
       <SheetContent side="right" className="bg-background border-border">
         <nav className="mt-10 flex flex-col gap-6 font-mono text-sm">
           {navLinks.map((link) => (
@@ -1385,28 +1388,35 @@ export function HeroSection() {
             trás.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild>
-              <a href="#projetos">Ver projetos</a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="mailto:matheus081105@gmail.com">
-                <Mail className="mr-2" size={16} /> E-mail
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a
-                href="https://www.linkedin.com/in/matheus-eduardo-mendonça-gomes-4aaa57270"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Linkedin className="mr-2" size={16} /> LinkedIn
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="/img/CV.pdf" download>
-                <Download className="mr-2" size={16} /> Baixar CV
-              </a>
-            </Button>
+            <Button render={<a href="#projetos">Ver projetos</a>} />
+            <Button
+              variant="outline"
+              render={
+                <a href="mailto:matheus081105@gmail.com">
+                  <Mail className="mr-2" size={16} /> E-mail
+                </a>
+              }
+            />
+            <Button
+              variant="outline"
+              render={
+                <a
+                  href="https://www.linkedin.com/in/matheus-eduardo-mendonça-gomes-4aaa57270"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Linkedin className="mr-2" size={16} /> LinkedIn
+                </a>
+              }
+            />
+            <Button
+              variant="outline"
+              render={
+                <a href="/img/CV.pdf" download>
+                  <Download className="mr-2" size={16} /> Baixar CV
+                </a>
+              }
+            />
           </div>
         </Reveal>
         <Reveal delay={0.1}>
