@@ -1,25 +1,10 @@
-import { Fira_Code, Fraunces, Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 
-export const fraunces = Fraunces({
+export const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
+  variable: "--font-archivo",
+  axes: ["wdth"],
   display: "swap",
 });
 
-export const firaCode = Fira_Code({
-  subsets: ["latin"],
-  variable: "--font-fira-code",
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-export const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-export const fontVariables = `${fraunces.variable} ${firaCode.variable} ${inter.variable}`;
+export const fontVariables = archivo.variable;

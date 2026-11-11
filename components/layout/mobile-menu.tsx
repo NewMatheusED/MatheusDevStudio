@@ -24,15 +24,15 @@ export function MobileMenu({ activeId }: MobileMenuProps) {
         }
       />
       <SheetContent side="right" className="bg-background border-border">
-        <nav className="mt-10 flex flex-col gap-6 font-mono text-sm">
+        <nav className="mt-10 flex flex-col gap-6 text-base">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "text-muted-foreground transition-colors hover:text-accent",
-                activeId === link.id && "text-accent",
+                "text-muted-foreground transition-colors hover:text-foreground",
+                activeId === link.id && "text-foreground",
               )}
             >
               {link.label}

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Reveal } from "@/components/motion/reveal";
 import { contactSchema, type ContactFormValues } from "@/lib/contact-schema";
 import { submitContactForm } from "@/lib/submit-contact";
 
@@ -26,14 +25,14 @@ export function ContactSection() {
   return (
     <section id="contato" className="px-6 py-24 md:pl-64">
       <div className="mx-auto max-w-2xl">
-        <Reveal>
+        <div>
           <h2 className="font-display text-3xl font-semibold text-foreground">Contato</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Tem um projeto em mente ou só quer bater um papo? Me manda uma mensagem.
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.05}>
+        <div>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit((values) => mutation.mutate(values))}
@@ -108,7 +107,7 @@ export function ContactSection() {
               E-mail
             </a>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
