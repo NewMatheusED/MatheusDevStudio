@@ -34,6 +34,7 @@ export function LayerLabels() {
         const y = r.top + r.height * (left ? 0.58 : 0.42) - origin.top;
         label.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
       });
+      box.dataset.placed = "";
       frame = requestAnimationFrame(place);
     };
 

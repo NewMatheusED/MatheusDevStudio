@@ -25,9 +25,18 @@ afterEach(() => {
 });
 
 describe("useActiveSection", () => {
-  it("starts with the first section id", () => {
+  it("starts with no active section: the page opens on the hero, which is none of them", () => {
     const { result } = renderHook(() => useActiveSection(["sobre", "projetos"]));
+    expect(result.current).toBe("");
+  });
+
+  it("clears when the active section leaves the screen and no other took over", () => {
+    const { result } = renderHook(() => useActiveSection(["sobre", "projetos"]));
+    const target = document.getElementById("sobre")!;
+    act(() => observedCallback?.([{ isIntersecting: true, intersectionRatio: 1, target }]));
     expect(result.current).toBe("sobre");
+    act(() => observedCallback?.([{ isIntersecting: false, intersectionRatio: 0, target }]));
+    expect(result.current).toBe("");
   });
 
   it("updates to the most-visible intersecting section", () => {

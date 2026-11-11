@@ -100,7 +100,7 @@
 .floor {
   position: absolute;
   inset: -110%;
-  transform: translateZ(calc(var(--open) * -var(--spread) - 90px));
+  transform: translateZ(calc(var(--open) * -1 * var(--spread) - 90px));
   background-image:
     linear-gradient(rgba(147, 167, 255, 0.22) 1px, transparent 1px),
     linear-gradient(90deg, rgba(147, 167, 255, 0.22) 1px, transparent 1px);
@@ -124,7 +124,7 @@
 }
 .l-infra {
   --edge: #0a171b;
-  transform: translateZ(calc(var(--open) * -var(--spread) - 18px));
+  transform: translateZ(calc(var(--open) * -1 * var(--spread) - 18px));
 }
 
 /* espessura: fatias de 2px empilhadas atrás da face */
@@ -154,7 +154,7 @@
 .scene[data-step="1"] .layer:not(.l-ui) > .plane,
 .scene[data-step="2"] .layer:not(.l-api) > .plane,
 .scene[data-step="3"] .layer:not(.l-infra) > .plane {
-  opacity: 0.18;
+  opacity: 0.3;
   filter: saturate(0.3);
 }
 .scene[data-step="1"] .layer:not(.l-ui) > .edge,
@@ -404,7 +404,7 @@
     opacity: calc(var(--open) * (1 - var(--flat)));
   }
   100% {
-    transform: translateZ(calc(var(--open) * -var(--spread)));
+    transform: translateZ(calc(var(--open) * -1 * var(--spread)));
     opacity: 0;
   }
 }
@@ -440,7 +440,7 @@
     order: -1;
   }
   .scene {
-    --spread: 68px;
+    --spread: 52px;
   }
 }
 
@@ -653,6 +653,10 @@
 .layer-labels[inert] {
   opacity: 0;
 }
+/* só aparecem depois de posicionadas pelo script (sem JavaScript ficariam empilhadas no canto) */
+.layer-labels:not([data-placed]) {
+  visibility: hidden;
+}
 .layer-label {
   position: absolute;
   left: 0;
@@ -781,6 +785,19 @@
   }
   .stack {
     scale: 0.74;
+  }
+  .scene {
+    --spread: 34px;
+  }
+}
+
+/* celular deitado: não há altura para pilha e texto; fica só o texto */
+@media (max-width: 999px) and (max-height: 480px) {
+  .scene-stage {
+    grid-template-rows: minmax(0, 1fr);
+  }
+  .stack {
+    display: none;
   }
 }
 
