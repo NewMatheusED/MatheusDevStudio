@@ -18,15 +18,12 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "MatheusDevStudio",
     description: "Sites e sistemas sob medida, da infraestrutura à tela. Conheça os trabalhos de Matheus Eduardo.",
-    images: ["/img/Logo.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "MatheusDevStudio",
     description: "Sites e sistemas sob medida, da infraestrutura à tela. Conheça os trabalhos de Matheus Eduardo.",
-    images: ["/img/Logo.jpg"],
   },
-  icons: { icon: "/img/Logo.ico" },
 };
 
 const personJsonLd = {
