@@ -15,6 +15,8 @@
   --blue-hi: #93a7ff;
   --teal: #2f6f7d;
   --line: #232a33;
+  /* quanto as camadas se afastam quando abertas */
+  --spread: 150px;
   height: 560vh;
 }
 
@@ -98,7 +100,7 @@
 .floor {
   position: absolute;
   inset: -110%;
-  transform: translateZ(calc(var(--open) * -150px - 90px));
+  transform: translateZ(calc(var(--open) * -var(--spread) - 90px));
   background-image:
     linear-gradient(rgba(147, 167, 255, 0.22) 1px, transparent 1px),
     linear-gradient(90deg, rgba(147, 167, 255, 0.22) 1px, transparent 1px);
@@ -114,7 +116,7 @@
 }
 .l-ui {
   --edge: #b3bdcc;
-  transform: translateZ(calc(var(--open) * 150px + 18px));
+  transform: translateZ(calc(var(--open) * var(--spread) + 18px));
 }
 .l-api {
   --edge: #2a40a8;
@@ -122,7 +124,7 @@
 }
 .l-infra {
   --edge: #0a171b;
-  transform: translateZ(calc(var(--open) * -150px - 18px));
+  transform: translateZ(calc(var(--open) * -var(--spread) - 18px));
 }
 
 /* espessura: fatias de 2px empilhadas atrás da face */
@@ -394,7 +396,7 @@
 }
 @keyframes scene-drop {
   0% {
-    transform: translateZ(calc(var(--open) * 150px));
+    transform: translateZ(calc(var(--open) * var(--spread)));
     opacity: 0;
   }
   12%,
@@ -402,7 +404,7 @@
     opacity: calc(var(--open) * (1 - var(--flat)));
   }
   100% {
-    transform: translateZ(calc(var(--open) * -150px));
+    transform: translateZ(calc(var(--open) * -var(--spread)));
     opacity: 0;
   }
 }
@@ -424,17 +426,21 @@
   }
 }
 
-@media (max-width: 759px) {
+@media (max-width: 999px) {
   .scene-stage {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 34vh minmax(0, 1fr);
+    grid-template-rows: 38vh minmax(0, 1fr);
     align-items: start;
     gap: 0;
+    padding-top: 84px;
     padding-bottom: 0;
     border: 0;
   }
   .stack {
     order: -1;
+  }
+  .scene {
+    --spread: 68px;
   }
 }
 
@@ -610,10 +616,14 @@
   background: #eef1f4;
   animation: scene-wheel 1.8s ease-in-out infinite;
 }
+/* visibility tira os links invisíveis da navegação por teclado */
 .scene:not([data-step="0"]) .strip,
 .scene:not([data-step="0"]) .scroll-hint {
   opacity: 0;
-  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0s 0.3s;
 }
 @keyframes scene-wheel {
   0% {
@@ -680,7 +690,7 @@
 }
 
 /* celular: pilha em cima, texto embaixo */
-@media (max-width: 759px) {
+@media (max-width: 999px) {
   .copy-box {
     min-height: 0;
     align-self: start;
@@ -717,7 +727,7 @@
 }
 
 /* tela baixa (notebook pequeno): tira a faixa e encolhe para tudo caber */
-@media (min-width: 760px) and (max-height: 720px) {
+@media (min-width: 1000px) and (max-height: 720px) {
   .scene-stage {
     padding-bottom: 72px;
   }
@@ -739,6 +749,38 @@
   .chips {
     max-height: 9.5em;
     overflow-y: auto;
+  }
+}
+
+/* celular pequeno: encolhe o texto para a abertura caber inteira */
+@media (max-width: 999px) and (max-height: 700px) {
+  .scene-stage {
+    grid-template-rows: 30vh minmax(0, 1fr);
+    padding-top: 72px;
+  }
+  .copy h1,
+  .copy h2 {
+    font-size: 26px;
+  }
+  .copy > p:not(.why) {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .copy-actions {
+    margin-top: 16px;
+  }
+  .chips {
+    margin-top: 12px;
+  }
+  .why {
+    margin-top: 10px;
+    min-height: 0;
+  }
+  .scroll-hint {
+    display: none;
+  }
+  .stack {
+    scale: 0.74;
   }
 }
 

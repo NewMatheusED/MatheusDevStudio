@@ -31,6 +31,7 @@ export function sceneState(progress: number): SceneState {
  * dos dois lados para as etiquetas das camadas.
  */
 export function stackScale(stackWidth: number, viewportWidth: number): number {
-  if (viewportWidth < 760) return (viewportWidth * 0.6) / 430;
+  // abaixo de 1000px a pilha fica em cima do texto: segue a largura da tela, com teto
+  if (viewportWidth < 1000) return Math.min(0.72, (viewportWidth * 0.6) / 430);
   return Math.min(1.7, stackWidth / 760);
 }

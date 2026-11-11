@@ -10,23 +10,20 @@ const siteUrl = "https://matheusdevstudio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "MatheusDevStudio — Matheus Gomes, Desenvolvedor Fullstack",
-  description:
-    "Desenvolvedor fullstack especializado em criar interfaces elegantes e sistemas robustos. Do design à API, transformo ideias em produtos digitais completos.",
+  title: "MatheusDevStudio | Matheus Eduardo, desenvolvedor fullstack",
+  description: "Sites e sistemas sob medida, da infraestrutura à tela. Conheça os trabalhos de Matheus Eduardo.",
   authors: [{ name: "Matheus Eduardo Mendonça Gomes" }],
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "MatheusDevStudio",
-    description:
-      "Desenvolvedor fullstack especializado em criar interfaces elegantes e sistemas robustos. Do design à API, transformo ideias em produtos digitais completos.",
+    description: "Sites e sistemas sob medida, da infraestrutura à tela. Conheça os trabalhos de Matheus Eduardo.",
     images: ["/img/Logo.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "MatheusDevStudio",
-    description:
-      "Desenvolvedor fullstack especializado em criar interfaces elegantes e sistemas robustos. Do design à API, transformo ideias em produtos digitais completos.",
+    description: "Sites e sistemas sob medida, da infraestrutura à tela. Conheça os trabalhos de Matheus Eduardo.",
     images: ["/img/Logo.jpg"],
   },
   icons: { icon: "/img/Logo.ico" },
