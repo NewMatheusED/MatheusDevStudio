@@ -99,3 +99,77 @@
     scroll-behavior: smooth;
   }
 }
+
+/* botão em pílula, usado na cena e nas seções */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: var(--background);
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: none;
+  color: var(--foreground);
+  box-shadow: inset 0 0 0 1px #3a4350;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* casos em destaque */
+.case-muted {
+  color: var(--muted-foreground);
+}
+.case-strong {
+  color: var(--foreground);
+}
+.case-tag {
+  border-color: #2c3440;
+  color: var(--muted-foreground);
+}
+.case-shot {
+  border-color: #2a3142;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* a FonPack usa as cores dela: quebra o escuro e mostra outro registro de trabalho */
+.theme-fonpack {
+  background: #e9ebdf;
+  color: #24352b;
+  border-color: #e9ebdf;
+}
+.theme-fonpack .case-muted,
+.theme-fonpack .case-tag {
+  color: #56655b;
+}
+.theme-fonpack .case-strong {
+  color: #24352b;
+}
+.theme-fonpack .case-tag {
+  border-color: #b9c2ad;
+}
+.theme-fonpack .case-shot {
+  border-color: #cfd6c3;
+  box-shadow: 0 30px 70px rgba(36, 53, 43, 0.18);
+}
+.theme-fonpack .btn {
+  background: #24352b;
+  color: #f4f1e8;
+}
+.theme-fonpack :focus-visible {
+  outline-color: #24352b;
+}
+
+/* âncoras param abaixo da barra fixa */
+[id] {
+  scroll-margin-top: 72px;
+}
