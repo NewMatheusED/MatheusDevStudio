@@ -27,9 +27,10 @@ export function sceneState(progress: number): SceneState {
 
 /**
  * Escala da pilha (base de 430px) para caber na coluna dela.
- * A pilha projetada ocupa cerca de 560px em escala 1; dividir por 610 deixa folga.
+ * A pilha projetada ocupa cerca de 560px em escala 1; dividir por 760 deixa espaço
+ * dos dois lados para as etiquetas das camadas.
  */
 export function stackScale(stackWidth: number, viewportWidth: number): number {
   if (viewportWidth < 760) return (viewportWidth * 0.6) / 430;
-  return Math.min(1.7, stackWidth / 610);
+  return Math.min(1.7, stackWidth / 760);
 }
