@@ -36,7 +36,7 @@ describe("stackScale", () => {
 
   it("caps the scale on huge screens and uses viewport width on phones", () => {
     expect(stackScale(2000, 2560)).toBe(1.7);
-    expect(stackScale(390, 390)).toBeCloseTo((390 * 0.6) / 430, 3);
+    expect(stackScale(390, 390)).toBeCloseTo((390 * 0.5) / 430, 3);
   });
 
   it("stays small on tablets, where the stack sits above the text", () => {

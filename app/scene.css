@@ -429,7 +429,7 @@
 @media (max-width: 999px) {
   .scene-stage {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 38vh minmax(0, 1fr);
+    grid-template-rows: 30vh minmax(0, 1fr);
     align-items: start;
     gap: 0;
     padding-top: 84px;
@@ -440,7 +440,7 @@
     order: -1;
   }
   .scene {
-    --spread: 52px;
+    --spread: 40px;
   }
 }
 
@@ -699,33 +699,35 @@
     min-height: 0;
     align-self: start;
   }
+  /* no celular a pessoa só rola: o seletor e as etiquetas tirariam espaço do texto */
   .strip,
-  .layer-labels {
+  .layer-labels,
+  .pager {
     display: none;
   }
   .scroll-hint {
     bottom: 20px;
   }
-  .pager {
-    bottom: 14px;
-  }
-  /* no celular as tecnologias viram uma fileira que desliza de lado: poupa altura */
   .chips {
-    margin: 16px -24px 0;
-    padding: 2px 24px;
+    margin-top: 14px;
     gap: 6px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
   .chip {
-    flex: none;
-  }
-  .chip {
+    gap: 6px;
     font-size: 13px;
-    padding: 6px 9px 6px 7px;
+    padding: 5px 9px 5px 7px;
+    border-radius: 8px;
+  }
+  .chip img {
+    width: 15px;
+    height: 15px;
+  }
+  .chip:hover {
+    transform: none;
   }
   .why {
+    margin-top: 12px;
+    min-height: 0;
     font-size: 14px;
   }
 }
@@ -759,22 +761,31 @@
 /* celular pequeno: encolhe o texto para a abertura caber inteira */
 @media (max-width: 999px) and (max-height: 700px) {
   .scene-stage {
-    grid-template-rows: 30vh minmax(0, 1fr);
+    grid-template-rows: 31vh minmax(0, 1fr);
     padding-top: 72px;
+  }
+  .stack {
+    translate: 0 -6px;
   }
   .copy h1,
   .copy h2 {
-    font-size: 26px;
+    font-size: 24px;
   }
   .copy > p:not(.why) {
-    margin-top: 10px;
-    font-size: 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
   }
   .copy-actions {
     margin-top: 16px;
   }
   .chips {
     margin-top: 12px;
+    gap: 5px;
+  }
+  .chip {
+    padding: 4px 8px 4px 6px;
+    font-size: 12.5px;
   }
   .why {
     margin-top: 10px;
@@ -797,6 +808,13 @@
     grid-template-rows: minmax(0, 1fr);
   }
   .stack {
+    display: none;
+  }
+}
+
+/* tela de toque: o ícone de mouse não faz sentido */
+@media (pointer: coarse) {
+  .scroll-hint {
     display: none;
   }
 }
