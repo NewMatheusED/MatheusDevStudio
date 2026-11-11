@@ -1,56 +1,104 @@
+export type ProjectKind = "featured" | "client" | "own";
+
 export interface Project {
   slug: string;
+  kind: ProjectKind;
   title: string;
   description: string;
   url: string;
-  image: string;
+  linkLabel: string;
   stack: string[];
+  /** print do projeto; só nos destaques */
+  image?: string;
+  /** papel do Matheus no projeto; só no Beergam */
+  role?: string;
+  /** um resultado, em frase; só no Beergam */
+  result?: string;
 }
 
 export const projects: Project[] = [
   {
-    slug: "academia-zero-grau",
-    title: "Academia Zero Grau",
-    description:
-      "Site institucional completo para uma academia, pensado para transmitir a energia da marca com responsividade total em qualquer dispositivo.",
-    url: "https://academiazerograu.com.br/",
-    image: "/img/acad.PNG",
-    stack: ["HTML5", "CSS3", "JavaScript"],
+    slug: "beergam",
+    kind: "featured",
+    title: "Beergam",
+    description: "Plataforma de gestão para quem vende no Mercado Livre e na Shopee.",
+    role: "Estou no projeto desde o primeiro dia e participei da estrutura inteira: infraestrutura, backend e interface.",
+    result: "Hoje mais de 300 sellers usam o sistema.",
+    url: "https://beergam.ai",
+    linkLabel: "Visitar beergam.ai",
+    image: "/img/cases/beergam.webp",
+    stack: [
+      "React",
+      "TypeScript",
+      "React Router",
+      "Tailwind CSS",
+      "Python",
+      "Flask",
+      "Celery",
+      "Redis",
+      "MySQL",
+      "MongoDB",
+      "Docker",
+      "Kubernetes",
+      "Argo CD",
+    ],
   },
   {
-    slug: "curse-of-ioher",
-    title: "Curse Of Ioher",
-    description:
-      "Projeto com foco em acessibilidade web: modo de alto contraste, ajuste de tamanho de fonte e suporte a Libras para a comunidade surda.",
-    url: "https://curse-of-ioher.vercel.app/",
-    image: "/img/ioher.png",
-    stack: ["HTML5", "CSS3", "JavaScript", "Acessibilidade"],
-  },
-  {
-    slug: "jnc-embalagens",
-    title: "JNC Embalagens",
-    description:
-      "Site institucional para fabricante de embalagens, com galeria de produtos interativa e identidade visual desenvolvida sob medida.",
-    url: "https://jncembalagens.com.br/",
-    image: "/img/jnc.png",
-    stack: ["HTML5", "CSS3", "JavaScript"],
-  },
-  {
-    slug: "fonpack-embalagens",
+    slug: "fonpack",
+    kind: "featured",
     title: "FonPack Embalagens",
     description:
-      "Presença digital para empresa de embalagens sob medida, com apresentação clara dos serviços de personalização para clientes B2B.",
+      "Vitrine online para uma indústria de embalagens. O cliente escolhe medidas e cores no catálogo e fecha o orçamento direto no WhatsApp da empresa.",
     url: "https://fonpackembalagens.com.br/",
-    image: "/img/fonpack.jpg",
-    stack: ["HTML5", "CSS3", "JavaScript"],
+    linkLabel: "Visitar o site",
+    image: "/img/cases/fonpack.webp",
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Zustand"],
   },
   {
     slug: "rs-advogados",
-    title: "RS Advogados Associados",
-    description:
-      "Aplicação full-stack em PHP e MySQL com painel administrativo, gerenciador de comentários e proteção contra SQL Injection.",
-    url: "https://sergioedugomes.adv.br/",
-    image: "/img/RS.png",
+    kind: "client",
+    title: "RS Advogados",
+    description: "Site com painel administrativo e gestão de comentários.",
+    url: "https://sergioedugomes.com.br/",
+    linkLabel: "Visitar o site",
     stack: ["PHP", "MySQL"],
   },
+  {
+    slug: "jnc-embalagens",
+    kind: "client",
+    title: "JNC Embalagens",
+    description: "Site institucional com galeria de produtos.",
+    url: "https://jncembalagens.com.br/",
+    linkLabel: "Visitar o site",
+    stack: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    slug: "curse-of-ioher",
+    kind: "client",
+    title: "Curse of Ioher",
+    description: "Projeto de acessibilidade com alto contraste, ajuste de fonte e Libras.",
+    url: "https://curse-of-ioher.vercel.app/",
+    linkLabel: "Visitar o site",
+    stack: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    slug: "senate-tracker",
+    kind: "own",
+    title: "Senate Tracker",
+    description: "Sistema em três partes: API, frontend e um serviço de inteligência artificial.",
+    url: "https://github.com/NewMatheusED/projeto-POO",
+    linkLabel: "Ver no GitHub",
+    stack: ["Java", "React", "Python"],
+  },
+  {
+    slug: "compilador-minic",
+    kind: "own",
+    title: "Compilador MINIC",
+    description: "Um compilador escrito do zero, da leitura do código à análise da gramática.",
+    url: "https://github.com/NewMatheusED/Compilador-MINIC",
+    linkLabel: "Ver no GitHub",
+    stack: ["C"],
+  },
 ];
+
+export const byKind = (kind: ProjectKind): Project[] => projects.filter((p) => p.kind === kind);

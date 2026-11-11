@@ -1,27 +1,32 @@
 import { describe, expect, it } from "vitest";
-import { projects } from "./projects";
+import { byKind, projects } from "./projects";
 
 describe("projects", () => {
-  it("has exactly 5 curated projects", () => {
-    expect(projects).toHaveLength(5);
+  it("features Beergam then FonPack", () => {
+    expect(byKind("featured").map((p) => p.slug)).toEqual(["beergam", "fonpack"]);
   });
 
-  it("gives every project a unique slug, a live url, and at least one stack tag", () => {
-    const slugs = new Set(projects.map((p) => p.slug));
-    expect(slugs.size).toBe(projects.length);
+  it("lists three client works and two own projects", () => {
+    expect(byKind("client").map((p) => p.slug)).toEqual(["rs-advogados", "jnc-embalagens", "curse-of-ioher"]);
+    expect(byKind("own").map((p) => p.slug)).toEqual(["senate-tracker", "compilador-minic"]);
+  });
 
-    for (const project of projects) {
-      expect(project.url.startsWith("https://")).toBe(true);
-      expect(project.stack.length).toBeGreaterThan(0);
-      expect(project.title.length).toBeGreaterThan(0);
-      expect(project.description.length).toBeGreaterThan(20);
+  it("uses the law firm's new domain and drops the offline gym site", () => {
+    expect(projects.find((p) => p.slug === "rs-advogados")?.url).toBe("https://sergioedugomes.com.br/");
+    expect(projects.some((p) => p.url.includes("academiazerograu"))).toBe(false);
+  });
+
+  it("gives every project an https link, a link label and a stack", () => {
+    for (const p of projects) {
+      expect(p.url.startsWith("https://")).toBe(true);
+      expect(p.linkLabel.length).toBeGreaterThan(0);
+      expect(p.stack.length).toBeGreaterThan(0);
     }
   });
 
-  it("includes FonPack Embalagens with its own screenshot (not a reused image)", () => {
-    const fonpack = projects.find((p) => p.slug === "fonpack-embalagens");
-    const jnc = projects.find((p) => p.slug === "jnc-embalagens");
-    expect(fonpack).toBeDefined();
-    expect(fonpack?.image).not.toBe(jnc?.image);
+  it("keeps the Beergam case sober", () => {
+    const b = projects.find((p) => p.slug === "beergam")!;
+    expect(b.result).toBe("Hoje mais de 300 sellers usam o sistema.");
+    expect(b.description + b.role).not.toMatch(/melhor|líder|revolucion|incrível/i);
   });
 });
