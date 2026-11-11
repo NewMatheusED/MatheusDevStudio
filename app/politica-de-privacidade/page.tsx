@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteNav } from "@/components/layout/site-nav";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade — MatheusDevStudio",
+  title: "Política de privacidade | MatheusDevStudio",
   description: "Política de privacidade do site MatheusDevStudio.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <SiteNav />
       <main className="mx-auto max-w-3xl px-6 py-24">
-        <h1 className="font-display text-3xl font-semibold text-foreground">Política de Privacidade</h1>
+        <h1 className="display text-3xl text-foreground">Política de Privacidade</h1>
         <p className="mt-2 text-xs text-muted-foreground">Última atualização: 19/04/2024</p>
 
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-muted-foreground">
@@ -20,7 +22,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <section>
-            <h2 className="font-display text-lg font-semibold text-foreground">Coleta e Uso de Informações</h2>
+            <h2 className="text-lg font-semibold text-foreground">Coleta e Uso de Informações</h2>
             <p className="mt-2">
               Ao usar meu site, posso solicitar que você me forneça algumas informações pessoais identificáveis
               que podem ser usadas para contatá-lo ou identificá-lo. As informações pessoais podem incluir, mas
@@ -29,7 +31,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-lg font-semibold text-foreground">Uso Futuro de Cookies</h2>
+            <h2 className="text-lg font-semibold text-foreground">Uso Futuro de Cookies</h2>
             <p className="mt-2">
               Atualmente, meu site não usa &quot;cookies&quot;. No entanto, reservo o direito de implementar o uso
               de &quot;cookies&quot; no futuro para melhorar a experiência do usuário em meu site. Se decidir
@@ -40,7 +42,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-lg font-semibold text-foreground">Segurança</h2>
+            <h2 className="text-lg font-semibold text-foreground">Segurança</h2>
             <p className="mt-2">
               A segurança de suas informações pessoais é importante para mim, mas lembre-se de que nenhum método
               de transmissão pela Internet ou método de armazenamento eletrônico é 100% seguro. Embora eu me
@@ -50,7 +52,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-lg font-semibold text-foreground">
+            <h2 className="text-lg font-semibold text-foreground">
               Alterações nesta Política de Privacidade
             </h2>
             <p className="mt-2">
@@ -60,7 +62,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-lg font-semibold text-foreground">Contate-Me</h2>
+            <h2 className="text-lg font-semibold text-foreground">Contate-Me</h2>
             <p className="mt-2">
               Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato comigo.
             </p>
